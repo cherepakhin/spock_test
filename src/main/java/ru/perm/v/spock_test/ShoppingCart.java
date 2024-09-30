@@ -10,9 +10,11 @@ public class ShoppingCart {
     private BigDecimal totalPrice = BigDecimal.ZERO;
 
     public void addItem(String item, int quantity) {
-        items.add(new ShoppingItem(item, quantity));
+        ShoppingItem shoppingItem = new ShoppingItem(item, quantity);
+        items.add(shoppingItem);
         totalItems += quantity;
-        totalPrice = totalPrice.add(new BigDecimal(quantity * ShoppingItem.getPrice(item)));
+        BigDecimal price = Price.getPrice(item);
+        totalPrice = totalPrice.add(price.multiply(new BigDecimal(quantity)));
     }
 
     public Integer getTotalItems() {

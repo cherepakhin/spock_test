@@ -12,8 +12,8 @@ public class ShoppingItem {
         this.quantity = quantity;
     }
 
-    public static int getPrice(String item) {
-        return BigDecimal.ONE.intValue() * 2;
+    public static BigDecimal getPrice(String item) {
+        return Price.getPrice(item);
     }
 
     @Override

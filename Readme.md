@@ -26,6 +26,12 @@ class ShoppingCartTest extends Specification {
 
 ![Тест OK](doc/test_ok.png)
 
+Проведение теста:
+
+````bash
+./mvnw test
+````
+
 Результат для проваленного теста:
 (Изменил: totalPrice == 11.00)
 
